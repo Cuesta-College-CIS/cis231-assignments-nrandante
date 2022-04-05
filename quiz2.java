@@ -16,23 +16,29 @@ public class quiz2 {
 		int rowidx = scnr.nextInt();
 
 		// Your code
-        int cnt = 0;
-        int sum1 = 0;
-        int sum2 = 0;
-        for (int i = 0; i < M; i++ ){
-            for (int j = 0; j < M; j++ ){
-        
-             sum1 += matrix1[rowidx][i] * matrix2[j][0]; 
-            
-               sum2 += matrix1[rowidx][i] * matrix2[j][1];
-            
-            
+		int cnt = 0;
+		int sum1 = 0;
+		int sum2 = 0;
+		for (int i = 0; i < M; i++) {
+			for (int j = 0; j < M; j++) {
 
-        }
-        }
-    System.out.print(sum1 + " " + sum2);
-    
-  scnr.close();  
-}
+				sum1 += matrix1[rowidx][i] * matrix2[j][0];
+
+				sum2 += matrix1[rowidx][i] * matrix2[j][1];
+
+			}
+		}
+		System.out.print(sum1 + " " + sum2);
+
+		// Reference the below code segment
+		int[] result = new int[N];
+		for (int i = 0; i < N; i++) {
+			for (int j = 0; j < M; j++) {
+				result[i] += matrix1[rowidx][j] * matrix2[j][i];
+			}
+		}
+
+		scnr.close();
+	}
 
 }
